@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.full-img{
+    width: 100%;
+    max-height: 100vh;
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.countdown-body{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 210px);
+    justify-content: center;
+    align-items: center;
+}
+
+.day, .hour, .min, .sec{
+    text-align: center;
+}
+
+.dayEl, .hourEl, .minEl, .secEl{
+    font-size: 70px;
+}
+
+.days, .secs, .mins, .hours{
+    font-size: 40px;
+} 
+
+
+
+
+
+
+
+
+
+
+/* chrismas day styles */
+
+.chrismas-cont{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.chrismas-cont::after{
+    content: "";
+    width: 100px;
+    height: 80px;
+    background-color: black;
+    background: url(/img/hat.png);
+    background-repeat: no-repeat;
+    background-size: 100px 70px;  
+    display: inline-block;
+    position: absolute;
+    top: 9px;
+    left: -32px;
+    object-fit: contain;
+    object-position: bottom;
+    z-index: 9;
+}
+
+.merry{
+    --bg-size: 400%;
+    font-size: 70px;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    background: linear-gradient(270deg, rgb(243, 222, 34), rgb(226, 14, 14), rgb(18, 18, 206)) 0 0 / var(--bg-size) 100%;;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .merry {
+      animation: move-bg 8s ease-in-out infinite;
+    }
+    @keyframes move-bg {
+      to {
+        background-position: var(--bg-size) 0;
+      }
+    }
+}
+
+  
+/* falling card */
+
+.overCard{ 
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: -130px;
+    z-index: 100;
+}
+
+.card1{
+    background-color: yellow;
+    clip-path: polygon(25% 0%, 72% 0, 49% 100%, 0% 100%);
+    animation: card 8s ease-in-out infinite;
+}
+
+.card2{
+    background-color: blue;
+    clip-path: polygon(91% 0, 0 0, 62% 46%);
+    animation: card 8s ease-in-out infinite;
+}
+
+.card3{
+    background-color: white;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    animation: card 8s ease-in-out infinite;
+}
+
+.card4{
+    background-color: red;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: card 8s ease-in-out infinite;
+}
+
+@keyframes card{
+    to{
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+
+
+@media only screen and (max-width: 900px){
+
+    body{
+        overflow: hidden;
+
+    }
+
+    .countdown-body{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 30px;
+        row-gap: 30px;
+        justify-content: space-evenly;
+    }
+
+    .chrismas-cont{
+        width: fit-content;
+        
+    }
+
+    .merry{
+        font-size: 50px;
+        word-spacing: 5px;
+        letter-spacing: 1px;
+    }
+
+
+    .chrismas-cont::after{
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        background: url(/img/hat.png);
+        background-repeat: no-repeat;
+        background-size: 30px 30px;  
+        display: inline-block;
+        position: absolute;
+        top: 9px;
+        left: -8px;
+        object-fit: contain;
+        object-position: bottom;
+        z-index: 9;
+    }
+
+}
+
+
+/* chrismas light */
+
+.light-cont{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0.5px solid white;
+    animation: line 6s ease-in-out infinite;
+}
+
+.span_1, .span_2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bulb{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(8, 139, 78);
+    display: block;
+    border-radius: 50%;
+}
+
+.bulb-8{
+    position: absolute;
+    right: -5px;
+    top: 50%;
+}
+
+.bulb-9{
+    position: absolute;
+    top: 50%;
+    left: -5px;
+}
+
+@keyframes line {
+    0%{
+        border: 0.5px solid #C30F16;
+    }
+    20%{
+        border: 0.5px solid #599C5D;
+    }
+    40%{
+        border: 0.5px solid #F1D900;
+    }
+    60%{
+        border: 0.5px solid #2A8FBD;
+    }
+    80%{
+        border: 0.5px solid #663398;
+    }
+   100%{
+        border: 0.5px solid #C1A520;
+    }
+}
