@@ -1,20 +1,3 @@
-let anyYear = new Date().getFullYear();
-let chrismasDate = `25 Dec ${anyYear}`
-
-console.log(anyYear)
-
-let checkDate = new Date().getDate();
-let checkMonth = new Date().getUTCMonth() + 1;
-
-if(checkDate === 25 && checkMonth === 12){
-    itsChrismas();
-};
-
-if(checkDate === 26 && checkMonth === 12){
-    anyYear += 1;
-    countdown();
-}
-
 const dayEl = document.querySelector(".dayEl");
 const hourEl = document.querySelector(".hourEl");
 const minEl = document.querySelector(".minEl");
@@ -26,6 +9,23 @@ const minLet = document.querySelector(".mins");
 const secLet = document.querySelector(".secs");
 
 
+let checkDate = new Date().getDate();
+let checkMonth = new Date().getUTCMonth() + 1;
+
+let anyYear = new Date().getFullYear();
+
+let chrismasDate = `25 Dec ${anyYear}`;
+
+if(checkDate === 26 && checkMonth === 12 || checkDate === 27 && checkMonth === 12 || checkDate === 28 && checkMonth === 12 || checkDate === 29 && checkMonth === 12 || checkDate === 30 && checkMonth === 12 || checkDate === 31 && checkMonth === 12){
+    chrismasDate = `25 Dec ${anyYear + 1}`;
+    countdown();
+}
+
+console.log(anyYear)
+
+if(checkDate === 25 && checkMonth === 12){
+    itsChrismas();
+};
 
 
 function countdown() {
